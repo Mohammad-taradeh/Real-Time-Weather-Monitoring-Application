@@ -22,7 +22,7 @@ public static class Program
         }
 
         WeatherReaderFactory readerFactory = new();
-        IWeatherData weatherData = readerFactory.GetWeatherData(sb);
+        var weatherData = readerFactory.GetWeatherData(sb);
         station.Notify(weatherData);
 
     }
