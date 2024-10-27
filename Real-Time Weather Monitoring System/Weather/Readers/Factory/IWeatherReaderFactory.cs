@@ -5,5 +5,5 @@ namespace RealTimeWeatherMonitoringSystem.Weather.Readers.Factory;
 
 public interface IWeatherReaderFactory
 {
-    IWeatherData? GetWeatherData(StringBuilder sb);
+    IWeatherData? GetWeatherData(string data);
 }
