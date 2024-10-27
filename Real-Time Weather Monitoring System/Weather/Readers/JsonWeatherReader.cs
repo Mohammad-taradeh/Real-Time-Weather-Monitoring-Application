@@ -1,8 +1,8 @@
 ﻿using System.Text;
 using System.Text.Json;
-using Real_Time_Weather_Monitoring_System.Weather.models;
+using RealTimeWeatherMonitoringSystem.Weather.Models;
 
-namespace Real_Time_Weather_Monitoring_System.Weather.Readers;
+namespace RealTimeWeatherMonitoringSystem.Weather.Readers;
 
 internal class JsonWeatherReader : IWeatherReader
 {

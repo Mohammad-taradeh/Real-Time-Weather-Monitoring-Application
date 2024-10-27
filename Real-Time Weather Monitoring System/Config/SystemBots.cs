@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Real_Time_Weather_Monitoring_System.Config;
+namespace RealTimeWeatherMonitoringSystem.Config;
 
 public sealed class SystemBots
 {

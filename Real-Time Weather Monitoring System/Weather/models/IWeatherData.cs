@@ -1,4 +1,4 @@
-﻿namespace Real_Time_Weather_Monitoring_System.Weather.models;
+﻿namespace RealTimeWeatherMonitoringSystem.Weather.Models;
 
 public interface IWeatherData
 {

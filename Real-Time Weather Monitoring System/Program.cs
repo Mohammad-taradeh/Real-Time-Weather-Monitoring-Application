@@ -1,7 +1,7 @@
-﻿using Real_Time_Weather_Monitoring_System.Config;
-using Real_Time_Weather_Monitoring_System.Station;
-using Real_Time_Weather_Monitoring_System.Weather.models;
-using Real_Time_Weather_Monitoring_System.Weather.Readers.Factory;
+﻿using RealTimeWeatherMonitoringSystem.Config;
+using RealTimeWeatherMonitoringSystem.Station;
+using RealTimeWeatherMonitoringSystem.Weather.Models;
+using RealTimeWeatherMonitoringSystem.Weather.Readers.Factory;
 using System.Text;
 
 public static class Program

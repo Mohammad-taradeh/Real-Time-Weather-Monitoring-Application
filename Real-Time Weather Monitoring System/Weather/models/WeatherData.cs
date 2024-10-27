@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Real_Time_Weather_Monitoring_System.Weather.models;
+namespace RealTimeWeatherMonitoringSystem.Weather.Models;
 
 [XmlRoot]
 public class WeatherData : IWeatherData
