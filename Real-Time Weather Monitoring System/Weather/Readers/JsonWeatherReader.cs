@@ -6,8 +6,8 @@ namespace RealTimeWeatherMonitoringSystem.Weather.Readers;
 
 internal class JsonWeatherReader : IWeatherReader
 {
-    public IWeatherData? ReadWeather(StringBuilder sb)
+    public IWeatherData? ReadWeather(string data)
     {
-        return JsonSerializer.Deserialize<WeatherData>(sb.ToString());
+        return JsonSerializer.Deserialize<WeatherData>(data);
     }
 }
