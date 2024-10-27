@@ -1,9 +1,9 @@
-﻿using Real_Time_Weather_Monitoring_System.Bots;
-using Real_Time_Weather_Monitoring_System.Config;
-using Real_Time_Weather_Monitoring_System.Weather.models;
+﻿using RealTimeWeatherMonitoringSystem.Bots;
+using RealTimeWeatherMonitoringSystem.Config;
+using RealTimeWeatherMonitoringSystem.Weather.Models;
 using System.Linq;
 
-namespace Real_Time_Weather_Monitoring_System.Station;
+namespace RealTimeWeatherMonitoringSystem.Station;
 
 public class WeatherStation
 {

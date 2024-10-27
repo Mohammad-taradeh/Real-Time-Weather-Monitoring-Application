@@ -1,6 +1,6 @@
-﻿using Real_Time_Weather_Monitoring_System.Bots;
+﻿using RealTimeWeatherMonitoringSystem.Bots;
 
-namespace Real_Time_Weather_Monitoring_System.Config;
+namespace RealTimeWeatherMonitoringSystem.Config;
 
 public class Bots : IBots
 {

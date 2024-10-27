@@ -1,7 +1,7 @@
-﻿using Real_Time_Weather_Monitoring_System.Weather.models;
+﻿using RealTimeWeatherMonitoringSystem.Weather.Models;
 using System.Text;
 
-namespace Real_Time_Weather_Monitoring_System.Weather.Readers;
+namespace RealTimeWeatherMonitoringSystem.Weather.Readers;
 
 public interface IWeatherReader
 {
