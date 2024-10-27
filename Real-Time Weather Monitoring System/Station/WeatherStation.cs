@@ -9,11 +9,11 @@ public class WeatherStation
 {
     private List<IBaseBot> _bots = new();
 
-    public WeatherStation(IBots systemBots)
+    public WeatherStation(IBotConfiguration systemBots)
     {
-        _bots.Add(systemBots.snowBot);
-        _bots.Add(systemBots.sunBot);
-        _bots.Add(systemBots.rainBot);
+        _bots.Add(systemBots.SnowBot);
+        _bots.Add(systemBots.SunBot);
+        _bots.Add(systemBots.RainBot);
     }
 
     public void AddBot(IBaseBot bot)

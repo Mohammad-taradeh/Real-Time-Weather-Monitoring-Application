@@ -4,19 +4,19 @@ namespace RealTimeWeatherMonitoringSystem.Config;
 
 public sealed class SystemBots
 {
-    private static readonly Lazy<IBots> _configuration = new Lazy<IBots>(()=>ReadConfigrationBots());
+    private static readonly Lazy<IBotConfiguration> _configuration = new Lazy<IBotConfiguration>(()=>ReadConfigrationBots());
     private SystemBots()
     {
         
     }
-    private static IBots? ReadConfigrationBots()
+    private static IBotConfiguration? ReadConfigrationBots()
     {
         string config = File.ReadAllText(@"C:/Users/Lenovo/source/repos/Real-Time Weather Monitoring System/Real-Time Weather Monitoring System/Config/Config.json");
         JsonSerializerOptions options = new();
         options.PropertyNameCaseInsensitive = true;
-        return JsonSerializer.Deserialize<Bots>(config,options);
+        return JsonSerializer.Deserialize<BotConfiguration>(config,options);
     }
 
-    public static IBots Instance { get { return _configuration.Value; } }
+    public static IBotConfiguration Instance { get { return _configuration.Value; } }
 
 }
