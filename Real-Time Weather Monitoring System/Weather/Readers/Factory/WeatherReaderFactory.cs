@@ -6,10 +6,10 @@ namespace RealTimeWeatherMonitoringSystem.Weather.Readers.Factory;
 public class WeatherReaderFactory : IWeatherReaderFactory
 {
 
-    public IWeatherData? GetWeatherData(StringBuilder sb)
+    public IWeatherData? GetWeatherData(string data)
     {
         IWeatherReader reader;
-        var inputType = DetermineTheDataType(sb);
+        var inputType = DetermineTheDataType(data);
         if (inputType == InputDataType.Json)
         {
             reader = new JsonWeatherReader();
@@ -22,12 +22,12 @@ public class WeatherReaderFactory : IWeatherReaderFactory
         {
             throw new InvalidDataException("Provided data is neither Json nor XML.");
         }
-        return reader.ReadWeather(sb);
+        return reader.ReadWeather(data);
     }
-    private InputDataType? DetermineTheDataType(StringBuilder sb)
+    private InputDataType? DetermineTheDataType(string data)
     {
-        var IsJson = sb.ToString().Trim().Contains("{");
-        var IsXML = sb.ToString().Trim().Contains("<");
+        var IsJson = data.Trim().Contains("{");
+        var IsXML = data.Trim().Contains("<");
         if (IsJson)
             return InputDataType.Json;
         else if (IsXML)

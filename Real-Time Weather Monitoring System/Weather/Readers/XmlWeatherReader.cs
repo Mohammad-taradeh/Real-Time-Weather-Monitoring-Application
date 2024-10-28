@@ -1,15 +1,13 @@
-﻿using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using RealTimeWeatherMonitoringSystem.Weather.Models;
 
 namespace RealTimeWeatherMonitoringSystem.Weather.Readers;
 
 internal class XmlWeatherReader : IWeatherReader
 {
-    public IWeatherData? ReadWeather(StringBuilder sb)
+    public IWeatherData? ReadWeather(string data)
     {
         var xmlSerializer = new XmlSerializer(typeof(WeatherData));
-        WeatherData? result;
-        return (WeatherData)xmlSerializer.Deserialize(new StringReader(sb.ToString()));
+        return (WeatherData)xmlSerializer.Deserialize(new StringReader(data));
     }
 }
