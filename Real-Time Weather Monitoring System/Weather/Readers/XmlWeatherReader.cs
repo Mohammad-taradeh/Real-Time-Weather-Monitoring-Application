@@ -10,7 +10,6 @@ internal class XmlWeatherReader : IWeatherReader
     {
         var xmlSerializer = new XmlSerializer(typeof(WeatherData));
         WeatherData? result;
-        Console.WriteLine(sb.ToString());
         return (WeatherData)xmlSerializer.Deserialize(new StringReader(sb.ToString()));
     }
 }

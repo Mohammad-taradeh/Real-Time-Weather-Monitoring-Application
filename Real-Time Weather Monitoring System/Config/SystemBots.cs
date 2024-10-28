@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using RealTimeWeatherMonitoringSystem.AppSettings;
+using System.Text.Json;
 
 namespace RealTimeWeatherMonitoringSystem.Config;
 
@@ -11,7 +12,13 @@ public sealed class SystemBots
     }
     private static IBotConfiguration? ReadConfigrationBots()
     {
-        string config = File.ReadAllText(@"C:/Users/Lenovo/source/repos/Real-Time Weather Monitoring System/Real-Time Weather Monitoring System/Config/Config.json");
+        var appSettings = AppSettingsInitializer.Instance;
+        string botsFilePath = appSettings.BotsConfigFilePath;
+        if (!File.Exists(botsFilePath))
+        {
+            throw new FileNotFoundException(appSettings.BotsConfigFilePath);
+        }
+        string config = File.ReadAllText(botsFilePath);
         JsonSerializerOptions options = new();
         options.PropertyNameCaseInsensitive = true;
         return JsonSerializer.Deserialize<BotConfiguration>(config,options);

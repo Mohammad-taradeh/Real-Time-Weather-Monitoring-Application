@@ -4,7 +4,7 @@ namespace RealTimeWeatherMonitoringSystem.Bots;
 
 public interface IBaseBot
 {
-    public string Message { get; set; }
-    public bool IsEnabled { get; set; }
-    public void Activate(IWeatherData data);
+    string Message { get; set; }
+    bool IsEnabled { get; set; }
+    virtual void Activate(IWeatherData data) { }
 }
