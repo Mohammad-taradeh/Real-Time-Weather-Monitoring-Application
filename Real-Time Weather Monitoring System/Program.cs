@@ -1,5 +1,6 @@
 ﻿using RealTimeWeatherMonitoringSystem.Config;
 using RealTimeWeatherMonitoringSystem.Station;
+using RealTimeWeatherMonitoringSystem.Weather.Models;
 using RealTimeWeatherMonitoringSystem.Weather.Readers.Factory;
 using System.Text;
 
@@ -15,7 +16,7 @@ public static class Program
         while (true)
         {
             input = Console.ReadLine();
-            if (input != "STOP")
+            if ( input != "STOP")
                 sb.Append(input);
             else break;
         }

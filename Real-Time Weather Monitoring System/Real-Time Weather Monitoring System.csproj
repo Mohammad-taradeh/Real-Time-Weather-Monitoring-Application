@@ -9,10 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="AppSettings\appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Config\config.json">
+    <None Update="Config\Config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
