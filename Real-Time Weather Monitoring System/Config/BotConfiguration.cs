@@ -4,7 +4,7 @@ namespace RealTimeWeatherMonitoringSystem.Config;
 
 public class BotConfiguration : IBotConfiguration
 {
-    public IBaseBot? RainBot { get; set; }
-    public IBaseBot? SnowBot { get; set; }
-    public IBaseBot? SunBot { get; set; }
+    public RainBot? RainBot { get; set; }
+    public SnowBot? SnowBot { get; set; }
+    public SunBot? SunBot { get; set; }
 }
