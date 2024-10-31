@@ -18,25 +18,10 @@ env:
   DOTNET_VERSION: '6.0.401' # The .NET SDK version to use
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  restore:
-    name: install-dependencies
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
-      with: 
-        dotnet-version: ${{ env.DOTNET_VERSION }}
-    - name: Instal dependencies
-      run: dotnet restore
-      
-  # This job to build the project
-  build:
+  jobs:
+  build-and-test:
 
-    name: build-${{matrix.os}}
+    name: build-and-test-${{matrix.os}}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -48,26 +33,12 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install dependencies
+      run: dotnet restore
       
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
-  test:
-
-    name: build-${{matrix.os}}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{ env.DOTNET_VERSION }}
     
     - name: Test
       run: dotnet test --no-restore --verbosity normal
